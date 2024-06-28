@@ -9,7 +9,12 @@ axios.get(url)
         /* console.log(pagina); */
         /* // Salvar o conteúdo da página em um arquivo, se necessário
         fs.writeFileSync('index.html', pagina, 'utf-8'); */
-        const regexCapturaTagsH = /<(h[1-6])[^>]*>(.*?)<\/(h[1-6])>/g;
+
+        // Buscando Tags H
+        const regexCapturaTagsH = /<(h[1-6])[^>]*>(.*?)<\/\1>/g;
+
+        // Buscando a palavra Bank
+        /* const regexCapturaTagsH = /\bBank\b/g; */
 
         console.log(pagina.match(regexCapturaTagsH));
     })
